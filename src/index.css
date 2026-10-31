@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta Jossbell: rosas suaves con degradados y dorado sutil */
+  --color-ink: #4A2E35;            /* rosa vino / frambuesa profundo y sobrio */
+  --color-brand: #C5A059;          /* dorado sutil y fino */
+  --color-brand-hover: #B5904A;
+  --color-brand-active: #A5823C;
+  --color-brand-light: #F3E8D9;    /* fondo muy claro del dorado */
+  --color-green: #5C8A70;          /* verde suave para disponibilidad */
+  --color-green-light: #e8f1ec;
+
+  /* Rosas suaves para degradados */
+  --color-rose-soft: #FDF2F0;      /* rosa pastel muy sutil */
+  --color-rose-pale: #FADCD9;      /* rosa pastel un poco más intenso */
+  --color-rose-deep: #3B1F25;      /* rosa vino oscuro / borgoña suave (footer) */
+  --color-rose-deep-hover: #4E2932;
+
+  --color-border: #F0E2DE;         /* borde muy suave rosa/tierra claro */
+  --color-text-secondary: #8E6B73;
+  --color-text-muted: #C9B7BD;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --radius-card: 0.75rem;
+  --radius-button: 0.625rem;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 100%;
+}
+
+/* Utilidades de gradiente rosa suave */
+@utility bg-rose-gradient {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    #FFFFFF 0%,
+    #FDF2F0 45%,
+    #FADCD9 100%
+  );
+}
+
+@utility glow-rose {
+  box-shadow: 0 0 40px rgba(253, 242, 240, 0.7), 0 0 90px rgba(250, 220, 217, 0.5);
+}
+
+@utility border-gold {
+  border-color: #C5A059;
+}
+
+@utility focus-gold {
+  focus:outline-none focus:ring-2 focus:ring-[#C5A059] focus:border-[#C5A059];
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink antialiased bg-rose-gradient;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 {
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+}
